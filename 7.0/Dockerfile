@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM ifucloud/php:7.0
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends nginx \
