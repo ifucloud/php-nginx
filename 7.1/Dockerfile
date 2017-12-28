@@ -19,6 +19,5 @@ RUN chmod +x /usr/local/bin/docker-php-run
 RUN mkdir /usr/local/var/log/nginx
 
 EXPOSE 80 443 9000
-VOLUME ["/usr/local/etc","/app/web"]
 
 CMD ["docker-php-run"]
