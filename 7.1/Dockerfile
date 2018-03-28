@@ -20,12 +20,13 @@ RUN touch /var/log/cron.log
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY docker-php-run /usr/local/bin/
+COPY entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-php-run
-RUN chmod +x ./entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN mkdir /usr/local/var/log/nginx
 
 EXPOSE 80 443 9000
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
